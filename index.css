@@ -60,7 +60,7 @@ button:hover {
 /* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 600px (มือถือ) */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2em;
         /* ลดขนาดตัวอักษรของหัวข้อในมือถือ */
     }
 
