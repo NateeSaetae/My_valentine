@@ -16,35 +16,33 @@ body {
     text-align: center;
     padding: 20px;
     max-width: 600px;
-    width: 100%;
+    width: 90%;
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     color: #ff3366;
     margin-bottom: 20px;
     text-shadow: 2px 2px 8px #fff;
     font-family: "Itim", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.anniversary-container {
-    margin-top: 20px;
 }
 
 .anniversary-image {
-    width: 200px;
-    height: auto;
+    width: 100%;
+    max-width: 400px; /* จำกัดความกว้างสูงสุด */
+    height: auto; /* ปรับความสูงตามสัดส่วนเดิม */
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: 20px;
 }
 
 .anniversary-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.input-container {
+    margin-top: 20px;
 }
 
 input[type="date"] {
@@ -54,24 +52,26 @@ input[type="date"] {
     border: 1px solid #ccc;
     width: 100%;
     max-width: 250px;
+    margin-bottom: 10px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #ff3366;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
     max-width: 250px;
+    width: 100%;
+    margin-top: 5px;
 }
 
 button:hover {
     background-color: #ff6688;
 }
 
-/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 600px */
+/* Media Query สำหรับมือถือ */
 @media (max-width: 600px) {
     h1 {
         font-size: 2em;
@@ -84,7 +84,22 @@ button:hover {
     }
 
     button {
-        margin-left: 0;
+        width: 100%;
         margin-top: 10px;
+    }
+}
+
+/* Media Query สำหรับ iPad (แนวนอน) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .anniversary-image {
+        max-width: 350px;
     }
 }
