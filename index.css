@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Itim&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +9,6 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to bottom, #ff99cc, #ffffff);
-    /* gradient สีชมพูและขาว */
     text-align: center;
 }
 
@@ -15,19 +16,35 @@ body {
     text-align: center;
     padding: 20px;
     max-width: 600px;
-    /* ให้คอนเทนเนอร์ไม่กว้างเกินไป */
     width: 100%;
-    /* ทำให้ขนาดคอนเทนเนอร์ยืดหยุ่น */
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     color: #ff3366;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px #fff;
+    font-family: "Itim", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .anniversary-container {
     margin-top: 20px;
+}
+
+.anniversary-image {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+.anniversary-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 input[type="date"] {
@@ -36,9 +53,7 @@ input[type="date"] {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
-    /* ให้ช่องกรอกวันที่เต็มกว้าง */
     max-width: 250px;
-    /* จำกัดขนาดสูงสุดให้ไม่กว้างเกินไป */
 }
 
 button {
@@ -50,18 +65,16 @@ button {
     cursor: pointer;
     margin-left: 10px;
     max-width: 250px;
-    /* กำหนดขนาดปุ่มไม่ให้กว้างเกินไป */
 }
 
 button:hover {
     background-color: #ff6688;
 }
 
-/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 600px (มือถือ) */
+/* Media Query สำหรับหน้าจอที่มีความกว้างไม่เกิน 600px */
 @media (max-width: 600px) {
     h1 {
         font-size: 2em;
-        /* ลดขนาดตัวอักษรของหัวข้อในมือถือ */
     }
 
     .anniversary-container {
