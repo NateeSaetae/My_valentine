@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Itim&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Itim&family=Noto+Serif+Thai:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Serif+Thai:wght@100..900&display=swap');
 
+html,
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Itim", "Noto Serif Thai", sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(to bottom, #ff99cc, #ffffff);
     text-align: center;
+    overflow: auto;
 }
 
 .container {
@@ -29,25 +28,18 @@ h1 {
     font-weight: 400;
 }
 
-.text-container{
-    font-family: "Itim", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* ทำให้รูปภาพกับข้อความอยู่ในแนวนอน */
+/* จัดรูปกับข้อความให้อยู่ในแนวนอน */
 .anniversary-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* ระยะห่างระหว่างรูปกับข้อความ */
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
-/* ปรับขนาดรูป */
 .anniversary-image {
-    width: 200px;
+    width: 250px;
     height: auto;
     border-radius: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -59,15 +51,17 @@ h1 {
     box-shadow: 0 12px 24px rgba(255, 99, 71, 0.5);
 }
 
-/* สไตล์สำหรับข้อความทางขวาของรูป */
+/* ฟอนต์ของข้อความ */
 .text-container {
     text-align: left;
     max-width: 400px;
+    font-family: "Noto Serif Thai", serif;
 }
 
 .text-container h3 {
     font-size: 1.5em;
     color: #ff3366;
+    font-family: "Itim", sans-serif;
 }
 
 .text-container p {
