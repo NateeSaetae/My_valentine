@@ -9,14 +9,16 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom, #ff99cc, #ffffff);
     text-align: center;
-    overflow: auto;
+    overflow-x: hidden;
+    /* ป้องกันการเลื่อนแนวนอน */
 }
 
 .container {
     text-align: center;
     padding: 20px;
     max-width: 800px;
-    width: 100%;
+    width: 90%;
+    /* ทำให้รองรับทุกขนาดหน้าจอ */
 }
 
 h1 {
@@ -69,10 +71,11 @@ h1 {
     color: #333;
 }
 
-/* ปรับการแสดงผลสำหรับมือถือ */
-@media (max-width: 600px) {
+/* 🔹 ปรับให้รองรับ Samsung A53 5G และมือถือที่มีอัตราส่วน 20:9 */
+@media (max-width: 412px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+        /* ลดขนาดตัวอักษรให้พอดีกับหน้าจอ */
     }
 
     .anniversary-container {
@@ -82,9 +85,11 @@ h1 {
 
     .text-container {
         text-align: center;
+        padding: 10px;
     }
 
     .anniversary-image {
-        max-width: 300px;
+        max-width: 90%;
+        /* ทำให้รูปภาพยืดตามขนาดจอ */
     }
 }
