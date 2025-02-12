@@ -96,3 +96,75 @@ h1 {
         max-width: 40%;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff3366;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: none;
+    /* ซ่อนไว้ก่อน */
+}
+
+#menu-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-button {
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #ff6688;
+}
+
+/* ซ่อนเนื้อหาเริ่มต้น (h3, p, img) */
+.content h3,
+.content p,
+.content img {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* เมื่อกดปุ่มจะแสดง */
+.content.show h3,
+.content.show p,
+.content.show img {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
