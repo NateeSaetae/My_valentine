@@ -23,20 +23,31 @@ function scrollToTop() {
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded! ✅");
 
-    // หาหัวข้อทั้งหมดที่เป็น <h3>
     let topics = document.querySelectorAll(".content h3");
     let menuContainer = document.getElementById("menu-container");
+    let contents = document.querySelectorAll(".content");
 
     // วนลูปสร้างปุ่มตามจำนวน <h3>
     topics.forEach((topic, index) => {
         let button = document.createElement("button");
-        button.innerText = topic.innerText; // ตั้งชื่อปุ่มให้ตรงกับหัวข้อ
         button.classList.add("menu-button");
 
-        // กำหนดให้ปุ่มกดแล้วแสดง/ซ่อนเนื้อหา
+        // ค้นหาไอคอนใน <h3> และใช้แทนข้อความ
+        let icon = topic.querySelector("i");
+        if (icon) {
+            button.innerHTML = `<i class="${icon.classList}"></i>`; // ใช้ไอคอนจาก h3
+        } else {
+            button.innerHTML = `<i class="fa-solid fa-circle-question"></i>`; // ไอคอนสำรอง ถ้าไม่มี
+        }
+
+        // เมื่อกดปุ่ม
         button.addEventListener("click", function () {
-            let content = topic.closest(".content"); // หา <div class="content"> ที่ใกล้ที่สุด
-            content.classList.toggle("show"); // เพิ่มหรือลบ class "show" เพื่อแสดงหรือซ่อน
+            // ซ่อนเนื้อหาทั้งหมดก่อน
+            contents.forEach(content => content.classList.remove("active"));
+
+            // แสดงเฉพาะเนื้อหาของปุ่มที่กด
+            let content = topic.closest(".content");
+            content.classList.add("active");
         });
 
         menuContainer.appendChild(button);
@@ -44,6 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Menu buttons created ✅");
 });
+
+function createFloatingHeart() {
+    let heart = document.createElement("i");
+    heart.classList.add("fa-solid", "fa-heart", "floating-heart");
+    
+    // ตั้งค่าตำแหน่งแบบสุ่ม
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+
+    document.body.appendChild(heart);
+
+    // ลบหัวใจเมื่อ Animation จบ
+    setTimeout(() => { heart.remove(); }, 3000);
+}
+
+// สร้างหัวใจทุกๆ 1 วินาที
+setInterval(createFloatingHeart, 1000);
+
+
+
 
 
 
