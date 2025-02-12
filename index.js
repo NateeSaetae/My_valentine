@@ -56,10 +56,19 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Menu buttons created ✅");
 });
 
+// จำกัดจำนวนหัวใจสูงสุด 4 ดวง
+const MAX_HEARTS = 4;
+
+// สร้างหัวใจลอยแบบสุ่ม
 function createFloatingHeart() {
+    let hearts = document.querySelectorAll(".floating-heart");
+
+    // เช็คว่ามีหัวใจบนหน้าจอเกิน 4 ดวงหรือไม่
+    if (hearts.length >= MAX_HEARTS) return; // ถ้ามี 4 ดวงแล้ว ไม่ต้องสร้างเพิ่ม
+
     let heart = document.createElement("i");
     heart.classList.add("fa-solid", "fa-heart", "floating-heart");
-    
+
     // ตั้งค่าตำแหน่งแบบสุ่ม
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.top = window.innerHeight + "px";
@@ -67,11 +76,20 @@ function createFloatingHeart() {
     document.body.appendChild(heart);
 
     // ลบหัวใจเมื่อ Animation จบ
-    setTimeout(() => { heart.remove(); }, 3000);
+    setTimeout(() => {
+        heart.remove();
+    }, 3000);
 }
 
 // สร้างหัวใจทุกๆ 1 วินาที
 setInterval(createFloatingHeart, 1000);
+
+
+
+
+
+
+
 
 
 
